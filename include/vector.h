@@ -30,11 +30,11 @@ void vector_rotate(Vector *v, double pitch, double yaw, double roll);
 
 // add functions, vector_add changes the first vector
 void vector_add(Vector *v1, Vector *v2);
-void vector_add_const(Vector *v1, double const);
+void vector_add_const(Vector *v1, double c);
 
 // subtract functions, vector_subtract changes the first vector
 void vector_subtract(Vector *v1, Vector *v2);
-void vector_subtract_const(Vector *v1, double const);
+void vector_subtract_const(Vector *v1, double c);
 
 // scale the vector by a constant
 void vector_scale(Vector *v, double scalar);
