@@ -8,7 +8,7 @@ make
 ```
 A libvector.a file will be generated in the build directory.
 ### How to use
-The Vector struct holds 3 doubles: x, y, and z. All vectors have the z attribute, if you want 2d functionality just set z to 0. The Point struct is equivalent to the Vector struct, and can be treated as if it were a Vector (although getting the magnitude of a point doesn't really make sense).
+The Vector struct holds 3 doubles: x, y, and z. All vectors have the z attribute, if you want 2d functionality just set z to 0. The Point struct is equivalent to the Vector struct, and can be treated as if it were a Vector (although getting the magnitude of a point doesn't really make sense). The code below demonstrates all the functionality of this library.
 ```c
 Vector v1 = {1, 2, 3};
 Vector v2 = {4, 5, 6};
