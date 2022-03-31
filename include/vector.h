@@ -1,12 +1,20 @@
 #ifndef VECTOR_H
 #define VECTOR_H
 
-// all vectors have a z attribute, those with a z attribute of 0 are assumed to be 2d
+/*
+all vectors have a z attribute, if the is_2d attribute 
+is set to 1, all vector functions will ignore the z attribute
+*/
 typedef struct {
 	double x, y, z;
+	int is_2d;
 } Point;
 
 typedef Point Vector;
+
+// init functions, ensures that every member of the struct is correctly set
+void vector_init_3d(Vector *v, double x, double y, double z);
+void vector_init_2d(Vector *v, double x, double y);
 
 // magnitude functions
 double vector_get_mag_sq(Vector *v);
@@ -30,11 +38,11 @@ void vector_rotate(Vector *v, double pitch, double yaw, double roll);
 
 // add functions, vector_add changes the first vector
 void vector_add(Vector *v1, Vector *v2);
-void vector_add_const(Vector *v1, double c);
+void vector_add_const(Vector *v, double c);
 
 // subtract functions, vector_subtract changes the first vector
 void vector_subtract(Vector *v1, Vector *v2);
-void vector_subtract_const(Vector *v1, double c);
+void vector_subtract_const(Vector *v, double c);
 
 // scale the vector by a constant
 void vector_scale(Vector *v, double scalar);

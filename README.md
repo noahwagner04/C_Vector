@@ -8,10 +8,30 @@ make
 ```
 A libvector.a file will be generated in the build directory.
 ### How to use
-The Vector struct holds 3 doubles: x, y, and z. All vectors have the z attribute, if you want 2d functionality just set z to 0. The Point struct is equivalent to the Vector struct, and can be treated as if it were a Vector (although getting the magnitude of a point doesn't really make sense). The code below demonstrates all the functionality of this library.
+The Vector struct holds 3 doubles and 1 int: x, y, z, and is_2d. All vectors (including 2d ones) have the z attribute, but the z attribute will be ignored in all vector operations in 2d vectors. The Point struct is equivalent to the Vector struct, and can be used in replace of the vector struct for all vector functions (although some vector operations such as getting the magnitude doesn't really make sense to be applied on points). The code below demonstrates all the functionality of this library.
 ```c
-Vector v1 = {1, 2, 3};
-Vector v2 = {4, 5, 6};
+Vector v1, v2;
+
+Point p;
+
+// initialize the vectors to be 3d
+vector_init_3d(&v1, 1, 2, 3);
+vector_init_3d(&v2, 4, 5, 6);
+
+// OR, initialize the vectors to be 2d
+vector_init_2d(&v1, 1, 2);
+vector_init_2d(&v2, 3, 4);
+
+/*
+NOTE: for point initialization, just use vector_init 
+this applies to all other functions as well
+*/
+
+// initialize the point to be 2d
+vector_init_2d(&p, 1, 2);
+
+// initialize the point to be 3d
+vector_init_3d(&p, 1, 2, 3);
 
 // gets the squared magnitude of the vector
 double length_sq = vector_get_mag_sq(&v1);
