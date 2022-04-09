@@ -69,6 +69,9 @@ vector_subtract(&v1, &v2);
 // subtracts 5 to all x, y, z attributes
 vector_subtract_const(&v1, 5);
 
+// gets the angle in radians between the two vectors
+double angle = vector_get_angle_btw(&v1, &v2);
+
 // multiplies all x, y, z attributes by 2
 vector_scale(&v1, 2);
 ```

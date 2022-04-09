@@ -128,6 +128,10 @@ void vector_subtract_const(Vector *v, double c) {
 	}
 }
 
+double vector_get_angle_btw(Vector *v1, Vector *v2) {
+	return acos(vector_dot(v1, v2) / (vector_get_mag(v1) * vector_get_mag(v2)));
+}
+
 void vector_scale(Vector *v, double scalar) {
 	v->x *= scalar;
 	v->y *= scalar;

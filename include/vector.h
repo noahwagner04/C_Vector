@@ -44,6 +44,9 @@ void vector_add_const(Vector *v, double c);
 void vector_subtract(Vector *v1, Vector *v2);
 void vector_subtract_const(Vector *v, double c);
 
+// get the angle between two vectors in radians
+double vector_get_angle_btw(Vector *v1, Vector *v2);
+
 // scale the vector by a constant
 void vector_scale(Vector *v, double scalar);
 
