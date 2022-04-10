@@ -10,7 +10,7 @@ A libvector.a file will be generated in the build directory.
 ### How to use
 The Vector struct holds 3 doubles and 1 int: x, y, z, and is_2d. All vectors (including 2d ones) have the z attribute, but the z attribute will be ignored in all vector operations in 2d vectors. The Point struct is equivalent to the Vector struct, and can be used in replace of the vector struct for all vector functions (although some vector operations such as getting the magnitude doesn't really make sense to be applied on points). The code below demonstrates all the functionality of this library.
 ```c
-Vector v1, v2;
+Vector v1, v2, v3;
 
 Point p;
 
@@ -21,6 +21,9 @@ vector_init_3d(&v2, 4, 5, 6);
 // OR, initialize the vectors to be 2d
 vector_init_2d(&v1, 1, 2);
 vector_init_2d(&v2, 3, 4);
+
+// OR, make a vector equal another (no initialization of v3 has to be done)
+v3 = v2;
 
 /*
 NOTE: for point initialization, just use vector_init 
@@ -71,6 +74,12 @@ vector_subtract_const(&v1, 5);
 
 // gets the angle in radians between the two vectors
 double angle = vector_get_angle_btw(&v1, &v2);
+
+// returns the length of the vector projected from v1 onto v2
+double proj_length = vector_get_scalar_proj(&v1, &v2);
+
+// sets v3 to the vector that is v1 projected onto v2 (note, the destination vector can also be v1 and v2)
+vector_proj(&v1, &v2, &v3);
 
 // multiplies all x, y, z attributes by 2
 vector_scale(&v1, 2);

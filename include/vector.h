@@ -47,6 +47,12 @@ void vector_subtract_const(Vector *v, double c);
 // get the angle between two vectors in radians
 double vector_get_angle_btw(Vector *v1, Vector *v2);
 
+// gets the length of v1 projected onto v2
+double vector_get_scalar_proj(Vector *v1, Vector *v2);
+
+// projects v1 onto v2, and sets dest to that newly projected vector
+void vector_proj(Vector *v1, Vector *v2, Vector *dest);
+
 // scale the vector by a constant
 void vector_scale(Vector *v, double scalar);
 

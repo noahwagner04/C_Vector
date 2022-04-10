@@ -132,6 +132,17 @@ double vector_get_angle_btw(Vector *v1, Vector *v2) {
 	return acos(vector_dot(v1, v2) / (vector_get_mag(v1) * vector_get_mag(v2)));
 }
 
+double vector_get_scalar_proj(Vector *v1, Vector *v2) {
+	return vector_dot(v1, v2) / vector_get_mag(v2);
+}
+
+void vector_proj(Vector *v1, Vector *v2, Vector *dest) {
+	Vector temp = *v2;
+	vector_normalize(&temp);
+	vector_scale(&temp, vector_get_scalar_proj(v1, v2));
+	*dest = temp;
+}
+
 void vector_scale(Vector *v, double scalar) {
 	v->x *= scalar;
 	v->y *= scalar;
