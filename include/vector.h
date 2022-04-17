@@ -33,6 +33,8 @@ double vector_get_dist_sq_btw(Vector *v1, Vector *v2);
 // finds the dot product between two vectors
 double vector_dot(Vector *v1, Vector *v2);
 
+// add vector_cross function (cross product)
+
 // rotates the vector, if the vector is 2d pitch is the only angle used, so set yaw and roll to 0
 void vector_rotate(Vector *v, double pitch, double yaw, double roll);
 
